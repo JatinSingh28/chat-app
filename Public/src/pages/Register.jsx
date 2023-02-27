@@ -17,7 +17,7 @@ export default function Register() {
 
   useEffect(() => {
     if (localStorage.getItem("chat-app-user")) {
-      navigate("/chat");
+      navigate("/");
     }
   });
 
@@ -35,7 +35,7 @@ export default function Register() {
         toast.error(data.msg);
       } else {
         localStorage.setItem("chat-app-user", JSON.stringify(data.user));
-        navigate("/chat");
+        navigate("/");
       }
     }
   };
