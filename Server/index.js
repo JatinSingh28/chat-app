@@ -27,13 +27,13 @@ mongoose
     console.log(err.message);
   });
 
-const server = app.listen(process.env.PORT, () => {
+const server = app.listen(process.env.PORT || 3030, () => {
   console.log(`Server is listening on ${process.env.PORT}`);
 });
 
 const io = socket(server, {
   cors: {
-    origin: "http://127.0.0.1:5173",
+    origin: process.env.ORIGIN,
     credentials: true,
   },
 });
