@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { loginRoute } from "../utils/APIRoutes";
+import Spline from "@splinetool/react-spline";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -13,17 +14,17 @@ export default function Register() {
     password: "",
   });
 
-  useEffect(()=>{
-    if(localStorage.getItem('chat-app-user')){
-      navigate("/")
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
+      navigate("/");
     }
-  })
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (handleValidation()) {
       const { password, username } = values;
-      const { data } = await axios.post(loginRoute, { 
+      const { data } = await axios.post(loginRoute, {
         username,
         password,
       });
@@ -38,7 +39,7 @@ export default function Register() {
   };
 
   const handleValidation = () => {
-    const { password,  username } = values;
+    const { password, username } = values;
     if (username.length === "") {
       toast.error("Username is required");
       return false;
@@ -56,6 +57,9 @@ export default function Register() {
   return (
     <div>
       <FormContainer>
+        <div className="spline">
+          <Spline scene="https://prod.spline.design/bJQBHWF7ang-6nFh/scene.splinecode" />
+        </div>
         <form onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
             {/* <img src="" alt="" /> */}
@@ -91,11 +95,15 @@ export default function Register() {
 const FormContainer = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: #635985;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .spline{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+  }
   .brand {
     h1 {
       color: white;
@@ -106,7 +114,9 @@ const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    background-color: #18122b;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(7px);
+    border-radius: 15px;
     padding: 3rem 5rem;
     input {
       padding: 0.8rem;
@@ -118,8 +128,11 @@ const FormContainer = styled.div`
       width: 100%;
       font-size: 1rem;
       &:focus {
-        border: 0.1rem solid #f000ff;
+        border: 0.2rem solid #00b3ffd6;
         outline: none;
+      }
+      &::placeholder{
+        color: white;
       }
     }
     button {
@@ -139,7 +152,7 @@ const FormContainer = styled.div`
       color: white;
       font-size: 1.2rem;
       a {
-        color: #ebc7e6;
+        color: #0011ff;
         margin-left: 0.5rem;
         text-decoration: none;
         font-weight: bold;
