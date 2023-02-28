@@ -102,6 +102,7 @@ const Container = styled.div`
   grid-template-rows: 8% 82% 10%;
   overflow: hidden;
   gap: 0.1rem;
+  background-color: #191825;
   /* @media screen and (min-width: 720px) and (max-width: 1080px) {
     grid-template-columns: 15% 70% 15%;
   }
@@ -161,13 +162,15 @@ const Container = styled.div`
     .sended {
       justify-content: flex-end;
       .content {
-        background-color: #4f04ff21;
+        background-color: #EEEEEE;
+        color: black;
       }
     }
     .received {
       justify-content: flex-start;
       .content {
-        background-color: #9900ff20;
+        background-color: #848383;
+        color: black;
       }
     }
   }

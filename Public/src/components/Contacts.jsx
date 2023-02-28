@@ -26,7 +26,7 @@ export default function Contacts({ contacts, currentUser,changeChat }) {
         <Container>
           <div className="brand">
             {/* <img src={logo} alt="" /> */}
-            <h3>We Chat</h3>
+            <h3>Chat</h3>
           </div>
           <div className="contacts">
             {contacts.map((contact, index) => {
@@ -75,7 +75,7 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 10% 75% 15%;
   overflow: hidden;
-  background-color: #080420;
+  background-color: #191825;
 
   .brand {
     display: flex;
@@ -108,7 +108,7 @@ const Container = styled.div`
     }
 
     .contact {
-      background-color: #ffffff39;
+      background-color: #E3DFFD;
       min-height: 5rem;
       width: 90%;
       cursor: pointer;
@@ -126,7 +126,7 @@ const Container = styled.div`
       }
       .username {
         h3 {
-          color: white;
+          color: black;
           /* font-size: 2rem; */
           text-transform: capitalize;
         }
@@ -138,7 +138,7 @@ const Container = styled.div`
   }
 
   .current-user {
-    background-color: #0d0d30;
+    background-color: #191825;
     display: flex;
     justify-content: center;
     align-items: center;

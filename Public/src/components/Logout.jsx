@@ -23,7 +23,7 @@ const Button = styled.button`
   align-items: center;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: black;
+  background-color: #191825;
   border: none;
   position: absolute;
   top: 20px;
