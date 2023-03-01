@@ -1,3 +1,15 @@
 /* /login 200
 /* /register 200
 /* /setavatar 200
+
+/login /register 200
+/login /* 200
+/login /setAvatar 200
+
+/register /login 200
+/register /setAvatar 200
+/register /* 200
+
+/setAvatar /login 200
+/setAvatar /register 200
+/setAvatar /* 200

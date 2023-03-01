@@ -43,6 +43,7 @@ export default function Register() {
 
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = values;
+    username = username.toLowerCase();
     if (password != confirmPassword) {
       toast.error("Confirm Password doesn't match.", {
         draggable: true,
@@ -152,7 +153,7 @@ const FormContainer = styled.div`
         border: 0.2rem solid #00b3ffd6;
         outline: none;
       }
-      &::placeholder{
+      &::placeholder {
         color: white;
       }
     }
