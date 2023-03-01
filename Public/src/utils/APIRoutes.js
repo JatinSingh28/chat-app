@@ -1,5 +1,6 @@
 export const host = "https://chat-app-backend-431x.onrender.com";
 // export const host = "http://localhost:5000";
+// export const host = "https://chat-fwib5mwr8-jatinsingh28.vercel.app"
 
 export const registerRoute = `${host}/api/auth/register`;
 export const loginRoute = `${host}/api/auth/login`;
