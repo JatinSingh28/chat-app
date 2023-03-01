@@ -43,14 +43,14 @@ export default function Register() {
 
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = values;
-    username = username.toLowerCase();
+    const username1 = username.toLowerCase();
     if (password != confirmPassword) {
       toast.error("Confirm Password doesn't match.", {
         draggable: true,
         newestOnTop: true,
       });
       return false;
-    } else if (username.length < 4) {
+    } else if (username1.length < 4) {
       toast.error("Username should have atleast 4 characters");
       return false;
     } else if (password.length < 5) {

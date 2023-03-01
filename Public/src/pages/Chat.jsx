@@ -8,6 +8,7 @@ import Welcome from "../components/Welcome";
 import ChatContainer from "../components/ChatContainer";
 import Logout from "../components/Logout";
 import { io } from "socket.io-client";
+import { RiContactsFill } from "react-icons/ri";
 
 export default function Chat() {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ export default function Chat() {
   const [currentUser, setCurrentUser] = useState(undefined);
   const [currentChat, setCurrentChat] = useState(undefined);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [width, updateWidth] = useState(false);
   const socket = useRef();
   useEffect(() => {
     async function setUser() {
@@ -55,15 +57,22 @@ export default function Chat() {
     setCurrentChat(chat);
   };
 
+  useEffect(() => {
+    if (window.innerWidth < 720) updateWidth(true);
+    else updateWidth(false);
+  }, [window.innerWidth]);
+
   return (
     <>
       <Container>
         <div className="container">
+          {/* <ContactSidebar/> */}
           <Contacts
             contacts={contacts}
             currentUser={currentUser}
             changeChat={handleChatChange}
           />
+          {/* {width && <RiContactsFill />} */}
           {isLoaded &&
             (currentChat === undefined ? (
               <Welcome currentUser={currentUser} />
@@ -89,20 +98,21 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background-color: #865DFF;
+  background-color: #865dff;
+  @media screen and (max-width: 720px) {
+    justify-content: left;
+    width: 100%;
+  }
 
   .container {
     height: 85vh;
     width: 85vw;
     background-color: #00000076;
     display: grid;
-    grid-template-columns: 20% 75%;
+    grid-template-columns: 25% 75%;
 
-    @media screen and (min-width: 720px) and (max-width: 1080px) {
-      grid-template-columns: 35% 65%;
-    }
-    @media screen and (min-width: 360px) and (max-width: 480px) {
-      grid-template-columns: 10% 90%;
+    @media screen and (max-width: 720px) {
+      grid-template-columns: 28% 95%;
     }
   }
 `;
