@@ -1,5 +1,5 @@
 # Realtime Chat Application
-#[Live Site](https://chat-app-mern28.netlify.app/)
+**[Live Site](https://chat-app-mern28.netlify.app/)**
 
 ![alt text](./Public/src/assets/Screenshot%20(686).png)
 ![alt text](./Public/src/assets/Screenshot%20(688).png)
