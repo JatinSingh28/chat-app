@@ -8,7 +8,7 @@ import Welcome from "../components/Welcome";
 import ChatContainer from "../components/ChatContainer";
 import Logout from "../components/Logout";
 import { io } from "socket.io-client";
-import { RiContactsFill } from "react-icons/ri";
+// import { RiContactsFill } from "react-icons/ri";
 
 export default function Chat() {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export default function Chat() {
   const [currentUser, setCurrentUser] = useState(undefined);
   const [currentChat, setCurrentChat] = useState(undefined);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [width, updateWidth] = useState(false);
+  // const [width, updateWidth] = useState(false);
   const socket = useRef();
   useEffect(() => {
     async function setUser() {
@@ -57,10 +57,10 @@ export default function Chat() {
     setCurrentChat(chat);
   };
 
-  useEffect(() => {
-    if (window.innerWidth < 720) updateWidth(true);
-    else updateWidth(false);
-  }, [window.innerWidth]);
+  // useEffect(() => {
+  //   if (window.innerWidth < 720) updateWidth(true);
+  //   else updateWidth(false);
+  // }, [window.innerWidth]);
 
   return (
     <>
